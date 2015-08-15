@@ -39,11 +39,19 @@ $bagheera->miles = 68000;
 
 $cars = array($murena, $rancho, $bagheera);
 
-
-
 ?>
 
-
+	<ul>
+		<?php 
+			foreach ($cars as $car) {
+				echo "<li> $car->make_model</li>";
+				echo "<ul>";
+					echo "<li> $$car->price </li>";
+					echo " <li> Miles: $car->miles </li> ";
+				echo "</ul>";	
+			}			
+		?>
+	</ul>
 
 
     
