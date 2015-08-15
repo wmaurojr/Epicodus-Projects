@@ -15,6 +15,30 @@
 
 <?php 
 	
+class Car 
+{
+	public $make_model;
+	public $price;
+	public $miles;
+}
+
+$murena = new Car();
+$murena->$make_model = '1983 Matra Murena';
+$murena->$price = 9000;
+$murena->$miles = 129000;
+
+$rancho = new Car();
+$rancho->make_model = '1977 Matra Rancho';
+$rancho->price = 14500;
+$rancho->miles = 179000;
+
+$bagheera = new Car();
+$bagheera->make_model = '1979 Matra Bagheera';
+$bagheera->price = 19900;
+$bagheera->miles = 68000;
+
+$cars = array($murena, $rancho, $bagheera);
+
 
 
 ?>
