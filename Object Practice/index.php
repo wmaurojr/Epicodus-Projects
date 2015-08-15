@@ -23,9 +23,9 @@ class Car
 }
 
 $murena = new Car();
-$murena->$make_model = '1983 Matra Murena';
-$murena->$price = 9000;
-$murena->$miles = 129000;
+$murena->make_model = '1983 Matra Murena';
+$murena->price = 9000;
+$murena->miles = 129000;
 
 $rancho = new Car();
 $rancho->make_model = '1977 Matra Rancho';
