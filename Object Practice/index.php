@@ -31,7 +31,7 @@ $murena = new Car('1983 Matra Murena', 9000, 129000, 'img/matra-murena.jpg' );
 $rancho = new Car('1977 Matra Rancho', 14500, 179000, 'img/matra-rancho.jpg' );
 $bagheera = new Car('1979 Matra Bagheera', 19000, 68000, 'img/matra-bagheera.jpg' );
 
-$cars = array($murena, $rancho, $bagheera);
+$cars = array($murena, $rancho, $bagheera); ?>
 
 
     <!-- jQuery -->
