@@ -17,6 +17,12 @@
 	
 class Car 
 {
+
+	public $make;
+	private $price;
+	public $mileage;
+	public $image;
+
  	function __construct($make_model, $price = 9000, $miles = 50000, $photo = 'img/matra-murena.jpg' ) {
 
 		$this->make = $make_model;
@@ -33,13 +39,17 @@ class Car
 			$this->price = $formatted_price;
 		}
 	}
+
+	function getPrice() {
+		return $this->price;
+	}
 }
 
 
 $murena = new Car('1983 Matra Murena', 9000, 129000, 'img/matra-murena.jpg' );
 $rancho = new Car('1977 Matra Rancho', 14500, 179000, 'img/matra-rancho.jpg' );
 $bagheera = new Car('1979 Matra Bagheera', 19000, 68000, 'img/matra-bagheera.jpg' );
-$bagheera->setPrice(24000.2924);
+$bagheera->setPrice(24000.8799468464);
 
 
 
@@ -48,10 +58,11 @@ $cars = array($murena, $rancho, $bagheera); ?>
   <ul>
         <?php 
             foreach ($cars as $car) {
+            	$price = $car->getPrice();
             	echo "<li><img style='width: 600px;' src='$car->image'></li>";
-                echo "<li> $car->make</li>";
+                echo "<li>$car->make</li>";
                 echo "<ul>";
-                    echo "<li> $$car->price </li>";
+                    echo "<li> $$price </li>";
                     echo "<li> Miles: $car->mileage</li>";
                 echo "</ul><br><br>";
             }
