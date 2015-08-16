@@ -1,0 +1,6 @@
+Follow along with the car dealership example. Add a constructor to your Car class with default values for some arguments.
+Instantiate your Car objects using your new constructor. Be sure to test out the default values for some cars.
+Encapsulate your Car class by making all of its properties private and creating getters and setters for each property.
+Modify the Car class to include a path to a picture of the car, and display it with the other info about the car.
+Now only show cars that are under a certain price and mileage. Modify the form so that the user can enter a number for each maximum value.
+Notice that if you enter numbers that are too low on the search form, you will get no matching results to display on your page, and your page will be blank. Add an if statement to your HTML so that if there are no cars to display, a message is shown instead. Hint: You can use the empty function in your condition to check and see if there is anything in an array. Try it out in the PHP shell.
