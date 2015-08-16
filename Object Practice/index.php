@@ -18,11 +18,13 @@
 class Car 
 {
 
-	public $make;
+// Declare Variables
+	private $make;
 	private $price;
-	public $mileage;
-	public $image;
+	private $mileage;
+	private $image;
 
+// Constructor Method
  	function __construct($make_model, $price = 9000, $miles = 50000, $photo = 'img/matra-murena.jpg' ) {
 
 		$this->make = $make_model;
@@ -31,7 +33,7 @@ class Car
 		$this->image = $photo;
 
 	}
-
+// Setters
 	function setPrice($new_price) {
 		$float_price = (float) $new_price;
 		if ($float_price != 0) {
@@ -40,8 +42,37 @@ class Car
 		}
 	}
 
+	function setMake($new_make) {
+		$this->make = (string) $new_make;
+	}
+
+	function setMileage($new_mileage) {
+		$float_mileage = (float) $new_mileage;
+		if ($float_mileage != 0) {
+			$formatted_mileage = number_format($float_mileage, 0);
+			$this->mileage = $formatted_mileage;
+		}
+	}
+
+	function setImage($new_image) {
+		$this->image = (string) $new_image;
+	}
+
+// Getters
 	function getPrice() {
 		return $this->price;
+	}
+
+	function getMake() {
+		return $this->make;
+	}
+
+	function getMileage() {
+		return $this->mileage;
+	}
+
+	function getImage() {
+		return $this->image;
 	}
 }
 
@@ -58,12 +89,17 @@ $cars = array($murena, $rancho, $bagheera); ?>
   <ul>
         <?php 
             foreach ($cars as $car) {
+
+            	$image =$car->getImage();
+            	$make = $car->getMake();
             	$price = $car->getPrice();
-            	echo "<li><img style='width: 600px;' src='$car->image'></li>";
-                echo "<li>$car->make</li>";
+            	$mileage = $car->getMileage();
+            
+            	echo "<li><img style='width: 600px;' src='$image'></li>";
+                echo "<li>$make</li>";
                 echo "<ul>";
                     echo "<li> $$price </li>";
-                    echo "<li> Miles: $car->mileage</li>";
+                    echo "<li> Miles: $mileage</li>";
                 echo "</ul><br><br>";
             }
         ?>
