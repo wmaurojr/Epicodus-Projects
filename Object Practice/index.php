@@ -33,6 +33,21 @@ $bagheera = new Car('1979 Matra Bagheera', 19000, 68000, 'img/matra-bagheera.jpg
 
 $cars = array($murena, $rancho, $bagheera); ?>
 
+  <ul>
+        <?php 
+            foreach ($cars as $car) {
+            	echo "<li><img style='width: 600px;' src='$car->image'></li>";
+                echo "<li> $car->make</li>";
+                echo "<ul>";
+                    echo "<li> $$car->price </li>";
+                    echo "<li> Miles: $car->mileage</li>";
+                echo "</ul><br><br>";
+            }
+        ?>
+    </ul>
+
+
+
 
     <!-- jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
