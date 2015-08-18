@@ -86,8 +86,8 @@ $bagheera->setPrice(24000.8799468464);
 
 $cars = array($murena, $rancho, $bagheera); ?>
 
-  <ul>
-        <?php 
+  <!-- <ul> -->
+        <?php /*
             foreach ($cars as $car) {
 
             	$image =$car->getImage();
@@ -101,9 +101,19 @@ $cars = array($murena, $rancho, $bagheera); ?>
                     echo "<li> $$price </li>";
                     echo "<li> Miles: $mileage</li>";
                 echo "</ul><br><br>";
-            }
-        ?>
-    </ul>
+            } 
+       */ ?> 
+    <!-- </ul> -->
+
+    <div class="container">
+        <form action="index.php">
+            <div class="form-group">
+                <label for="price">Enter Maximum Price:</label>
+                <input id="price" name="price" class="form-control" type="number">
+            </div>
+            <button type="submit" class="btn-success">Submit</button>
+        </form>
+    </div>
 
 
 
