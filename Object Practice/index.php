@@ -84,7 +84,19 @@ $bagheera->setPrice(24000.8799468464);
 
 
 
-$cars = array($murena, $rancho, $bagheera); ?>
+$cars = array($murena, $rancho, $bagheera); 
+
+$cars_matching_price = array();
+
+foreach ($cars as $car) {
+	$price = $car->getPrice();
+	if ( $price < $_GET['price'] ) {
+		array_push($cars_matching_price, $car);
+	}
+}
+
+?>
+
 
   <!-- <ul> -->
         <?php /*
