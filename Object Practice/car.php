@@ -88,20 +88,27 @@ foreach ($cars as $sale) {
 
 <ul style='text-align: center; list-style-type: none;'>
         <?php 
-            foreach ($cars_matching_price as $car) {
 
-            	$image = $car->getImage();
-            	$make = $car->getMake();
-            	$price = $car->getPrice();
-            	$mileage = $car->getMileage();
-            
-            	echo "<li><img style='width: 600px; margin: 10px auto;' src='$image'></li>";
-                echo "<li>$make</li>";
-                echo "<ul style='text-align: center; list-style-type: none; padding: 0;'>";
-                    echo "<li> $price is less than $_GET[price] </li>";
-                    echo "<li> Miles: $mileage</li>";
-                echo "</ul><br><br>";
-            } 
+        	if ( !empty($cars_matching_price) ) {
+	            foreach ($cars_matching_price as $car) {
+
+	            	$image = $car->getImage();
+	            	$make = $car->getMake();
+	            	$price = $car->getPrice();
+	            	$mileage = $car->getMileage();
+	            
+	            	echo "<li><img style='width: 600px; margin: 10px auto;' src='$image'></li>";
+	                echo "<li>$make</li>";
+	                echo "<ul style='text-align: center; list-style-type: none; padding: 0;'>";
+	                    echo "<li> $price </li>";
+	                    echo "<li> Miles: $mileage</li>";
+	                echo "</ul><br><br>";
+	            } 
+	        } 
+
+	        else { 
+	        	echo 'We\'re Sorry, but no results match your search. Please try again.';
+	        }  
         ?> 
 </ul>
 
