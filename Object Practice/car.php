@@ -22,7 +22,7 @@ class Car
 	function setPrice($new_price) {
 		$float_price = (float) $new_price;
 		if ($float_price != 0) {
-			$formatted_price = number_format($float_price, 2);
+			$formatted_price = number_format($float_price, 2, '.', '');
 			$this->price = $formatted_price;
 		}
 	}
@@ -65,7 +65,8 @@ class Car
 $murena = new Car('1983 Matra Murena', 9000, 129000, 'img/matra-murena.jpg' );
 $rancho = new Car('1977 Matra Rancho', 14500, 179000, 'img/matra-rancho.jpg' );
 $bagheera = new Car('1979 Matra Bagheera', 19000, 68000, 'img/matra-bagheera.jpg' );
-$bagheera->setPrice(24000.8799468464);
+$bagheera->setPrice(24000.87);
+$murena->setPrice(86000.87);
 
 
 
@@ -73,11 +74,36 @@ $cars = array($murena, $rancho, $bagheera);
 
 $cars_matching_price = array();
 
-foreach ($cars as $car) {
-	$salePrice = $car->getPrice();
+foreach ($cars as $sale) {
+	$salePrice = (float) $sale->getPrice();
+	//$formattedSalePrice = number_format($salePrice, 2);
 	if ( $salePrice < $_GET['price'] ) {
-		array_push($cars_matching_price, $car);
+		
+		array_push($cars_matching_price, $sale);
 	}
 }
 
 ?>
+
+<ul style='text-align: center; list-style-type: none;'>
+        <?php 
+            foreach ($cars_matching_price as $car) {
+
+            	$image = $car->getImage();
+            	$make = $car->getMake();
+            	$price = $car->getPrice();
+            	$mileage = $car->getMileage();
+            
+            	echo "<li><img style='width: 600px; margin: 10px auto;' src='$image'></li>";
+                echo "<li>$make</li>";
+                echo "<ul style='text-align: center; list-style-type: none; padding: 0;'>";
+                    echo "<li> $price is less than $_GET[price] </li>";
+                    echo "<li> Miles: $mileage</li>";
+                echo "</ul><br><br>";
+            } 
+        ?> 
+</ul>
+
+
+
+

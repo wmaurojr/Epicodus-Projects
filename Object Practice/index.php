@@ -13,30 +13,13 @@
 </head>
 <body>
 
-  <ul style='text-align: center; list-style-type: none;'>
-        <?php 
-            foreach ($cars_matching_price as $car) {
-
-            	$image =$car->getImage();
-            	$make = $car->getMake();
-            	$price = $car->getPrice();
-            	$mileage = $car->getMileage();
-            
-            	echo "<li><img style='width: 600px; margin: 10px auto;' src='$image'></li>";
-                echo "<li'>$make</li>";
-                echo "<ul style='text-align: center;>";
-                    echo "<li> $$price </li>";
-                    echo "<li> Miles: $mileage</li>";
-                echo "</ul><br><br>";
-            } 
-        ?> 
-    </ul>
-
     <div class="container">
         <form action="car.php">
             <div class="form-group">
                 <label for="price">Enter Maximum Price:</label>
                 <input id="price" name="price" class="form-control" type="number">
+                <label for="mileage">Enter Maximum Mileage:</label>
+                <input id="mileage" name="mileage" class="form-control" type="number">
             </div>
             <button type="submit" class="btn-success">Submit</button>
         </form>
