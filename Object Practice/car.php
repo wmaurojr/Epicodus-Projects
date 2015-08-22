@@ -78,7 +78,7 @@ foreach ($cars as $sale) {
 	$salePrice = (float) $sale->getPrice();
 	$saleMileage = (float) $sale->getMileage();
 	//$formattedSalePrice = number_format($salePrice, 2);
-	if ( $salePrice < $_GET['price'] ) && ( $saleMileage < $_GET['mileage'] ) {
+	if (( $salePrice < $_GET['price'] ) && ( $saleMileage < $_GET['mileage'] )) {
 		
 		array_push($cars_matching_price, $sale);
 	}
