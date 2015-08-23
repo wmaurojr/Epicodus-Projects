@@ -1,0 +1,8 @@
+Work through the greeting example app in the "Web apps with SIlex" lesson, and then do the Rectangle and CD examples in the "Objects in Silex" lesson (both from Monday homework).
+
+Move your car dealership site into a Silex app. Make sure your Car class includes a constructor as well as getters, setters and private properties.
+
+Do one of the previous exercises from scratch in Silex that you didn't get to yesterday. If you got through all of them, here's a new one for you:
+
+Job Board
+Create a section of a job posting board where a user can create one instance of a JobOpening class by submitting a form. It should include properties for a title, description, and contact info for the person posting the job. If you're feeling fancy, make the contact info into an object with its own class declaration, just like we did in the "Objects and properties" lesson. Hint: A Contact object would include properties like a name, email and phone number, and you would want to store it inside of the JobOpening object you are creating.
