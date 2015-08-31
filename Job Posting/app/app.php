@@ -2,6 +2,7 @@
 
 require_once __DIR__."/../vendor/autoload.php";
 require_once __DIR__."/../src/posting.php";
+require_once __DIR__."/../src/contact.php";
 
     $app = new Silex\Application();
 
@@ -73,12 +74,19 @@ require_once __DIR__."/../src/posting.php";
 
 	$app->get("/view_opening", function(){
 
-		$posting = new Posting($_GET['title'], $_GET['description'], $_GET['first-name'], $_GET['last-name'], $_GET['email'], $_GET['phone']);
+		$posting = new Posting($_GET['title'], $_GET['description']);
 
 		$title = $posting->getTitle();
 		$description = $posting->getDescription();
 
-		return "<h1>$title</h1><br><p>$description</p>";
+		$contact = new Contact($_GET['first-name'], $_GET['last-name'], $_GET['email'], $_GET['phone']);
+
+		$first_name = $contact->getFirstName();
+		$last_name = $contact->getLastName();
+		$email = $contact->getEmail();
+		$phone = $contact->getPhone();
+
+		return "<h1>$title</h1><br><p>$description</p><br><br><h2>Job posted by:</h2><br><h3>$first_name $last_name</h3><br><p>$email</p><br><p>$phone</p>";
 
 	});
 
