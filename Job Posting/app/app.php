@@ -7,7 +7,7 @@ require_once __DIR__."/../src/form.php";
 
     $app->get("/", function() {
 
-    	$output = '';
+    $output = 'Home';
 
     return $output;
 
