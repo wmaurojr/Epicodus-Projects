@@ -1,7 +1,7 @@
 <?php 
 
 require_once __DIR__."/../vendor/autoload.php";
-require_once __DIR__."/../src/form.php";
+require_once __DIR__."/../src/posting.php";
 
     $app = new Silex\Application();
 
@@ -70,6 +70,14 @@ require_once __DIR__."/../src/form.php";
 		  </body>
 		</html>";
     });
+
+	$app->get("/view_opening", function(){
+
+		$posting = new Posting($_GET['title'], $_GET['description']);
+
+		return "<h1></h1><br><p></p>"
+
+	});
 
     return $app;
 
