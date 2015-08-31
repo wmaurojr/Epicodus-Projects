@@ -73,9 +73,12 @@ require_once __DIR__."/../src/posting.php";
 
 	$app->get("/view_opening", function(){
 
-		$posting = new Posting($_GET['title'], $_GET['description']);
+		$posting = new Posting($_GET['title'], $_GET['description'], $_GET['first-name'], $_GET['last-name'], $_GET['email'], $_GET['phone']);
 
-		return "<h1></h1><br><p></p>"
+		$title = $posting->getTitle();
+		$description = $posting->getDescription();
+
+		return "<h1>$title</h1><br><p>$description</p>";
 
 	});
 
