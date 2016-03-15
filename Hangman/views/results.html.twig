@@ -1,0 +1,69 @@
+<html>
+<head>
+    <title>Hangman | RESULTS</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<style>
+
+    body {
+        padding: 0 75px;
+    }
+
+    #hangman {
+        float: left;
+        clear: both;
+    }
+
+    div.key {
+        width: 50px;
+        height: 50px;
+        float: left;
+        margin-right: 3px;
+        border-bottom: 2px solid;
+        line-height: 50px;
+        text-align: center;
+    }
+
+    div.key:first-of-type {
+        clear: left;
+    }
+
+    #newGuess {
+        float: left;
+        clear: both;
+        margin-top: 30px;
+    }
+
+</style>    
+
+</head>
+
+<body>
+        {% if guesses is not empty %}
+        <h1>Jim Haaaaaaaangminimin</h1>
+
+            <p>Here are all your guesses thus far:</p>
+            {{ keys }}
+            <p>
+                {% for guess in guesses %}
+                    {% if guess in keys %}
+                        {{ guess.getGuess }}&nbsp;
+                    {% endif %}
+                {% endfor %}
+            </p>
+          {% endif %}
+
+          <br/><img id="hangman" src="images/hangman_6.gif">
+
+          {% if keys is not empty %}
+            {% for key in keys %}
+                    <div class="key"></div>
+            {% endfor %}
+          {% endif %}
+          
+        <form id="newGuess" action='/' method='get'>
+            <button class='btn btn-lg btn-primary' type='submit'>New Guess</button>
+        </form>
+    
+  
+</body>
+</html>

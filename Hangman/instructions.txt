@@ -1,0 +1,43 @@
+Build an app for playing Hangman. Think carefully about the object(s) you'll use before starting. There are multiple ways to solve this problem.
+
+The computer can generate the words from a pre-set list you provide.
+The user can make a Guess by entering a letter into a form, and the app should tell them if it's right or wrong, and keep track of how many guesses they have left.
+Don't be to worried about graphics, you can tighten that up at the end. You can use a collection of 6 images. After the user has made a guess, take them to the "/hangman" page. If the user has one wrong guess, show the first image. If they have 2 wrong guesses, show the second image etc.
+On the "/hangman" page, display the letters they have right so far, just like above: b _ b b _ _
+Also on the "/hangman" page, display the letters they have wrong so far, and how many guesses they have left.
+Again, on the "/hangman" page, you should also include a link back to the "/new_guess" page.
+One more thing on the "/hangman" page - display a message saying "Yay! You guessed right!" or "Oh no! You guessed wrong!" at the top of the page. Display a different message saying "Game over!" in the same place on the page if they are out of guesses.
+Don't allow duplicate guesses. If the user tries to guess the same letter twice, they should be told to try again.
+Try to change the color of an element on your "/hangman" page based on whether the guess was right or wrong. Play around with changing the layout of your template file based on whether a guess is right or wrong, and whether or not the game is over.
+For a bonus: Make it 2 player! Create a new form page where one user can choose a word for the other user to guess.
+
+STEPS:
+
+1. Word is chosen randomly from list or input by user (hardcoded to start)
+2. Play enters a 1-letter guess at / and is taken to the /hangman route where
+	a. right letters displayed
+	b. wrong letters displayed
+	c. number of remaining guesses displayed
+	d. corresponding image is displayed based on # of incorrect guesses
+3. A button with 'New Guess' links player either back to home or to /new_guess
+
+LOGIC
+
+Keyword: 
+	Essential:
+		save word
+		break word into letters
+	Extra:
+		pull word from list at random
+		another user inputs word
+Guess:
+	Essential
+		must be string
+		1-letter maxlength
+		cannot be repeat (if guess exists in array of existing guesses exit)
+		must check against each letter of keyword
+		for each match, display that letter
+		if it doesn't match, add it to array of wrong guesses and display it
+		
+
+
